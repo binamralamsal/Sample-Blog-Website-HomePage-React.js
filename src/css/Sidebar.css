@@ -88,3 +88,31 @@ main aside ul li:hover .aside-icon-content,
 ::-webkit-scrollbar-thumb:hover {
   background: #b89e95;
 }
+
+@media screen and (max-width: 900px) and (min-width: 769px) {
+  main aside {
+    width: auto;
+    padding-left: 0;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  main aside {
+    width: auto;
+    padding-left: 0;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  main aside {
+    display: none;
+  }
+}

@@ -43,7 +43,7 @@ const Header = () => {
   };
 
   return (
-    <div>
+    <>
       <nav className="desktop-nav" id="nav-desktop">
         <div className="nav-left">
           <p>CrystalStocks</p>
@@ -134,7 +134,7 @@ const Header = () => {
           icon={<NotificationsIcon />}
         />
       </BottomNavigation>
-    </div>
+    </>
   );
 };
 

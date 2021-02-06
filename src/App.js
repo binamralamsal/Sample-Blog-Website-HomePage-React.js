@@ -1,8 +1,10 @@
 import "./App.css";
 import Header from "./components/Header";
 import Sidebar from "./components/Sidebar";
+import TopPosts from "./components/TopPosts/TopPosts";
 import { useState } from "react";
 import { createMuiTheme, ThemeProvider } from "@material-ui/core";
+import PostBlocks from "./components/PostBlocks/PostBlocks";
 
 function App() {
   const localMode = localStorage.getItem("mode");
@@ -24,8 +26,12 @@ function App() {
         <Header />
         <main>
           <Sidebar changeTheme={changeTheme} />
-          <div class="container">
-            <div class="content"></div>
+          <div className="container">
+            <div className="content">
+              <p className="page-title">Discover</p>
+              <TopPosts />
+              <PostBlocks />
+            </div>
           </div>
         </main>
       </div>

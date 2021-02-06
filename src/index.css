@@ -1,13 +1,152 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap");
+
+:root {
+  --dark-primary-color: #1f1d2b;
+  --dark-secondary-color: #252837;
+  --dark-text-color: rgb(240, 240, 240);
+  --dark-text-color-shady: #ababab;
+
+  --light-primary-color: #fff;
+  --light-secondary-color: rgb(248, 248, 248);
+  --light-text-color: rgb(49, 49, 49);
+  --light-text-color-shady: #353340;
+
+  --primary-color: var(--dark-primary-color);
+  --secondary-color: var(--dark-secondary-color);
+  --text-color: var(--dark-text-color);
+  --text-color-shady: var(--dark-text-color-shady);
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background-color: var(--primary-color);
+  color: var(--primary-color);
+}
+
+* {
+  margin: 0; /*  */
+  padding: 0;
+}
+
+/* For Light Mode */
+body.theme-light {
+  --primary-color: var(--light-primary-color);
+  --secondary-color: var(--light-secondary-color);
+  --text-color: var(--light-text-color);
+  --text-color-shady: var(--light-text-color-shady);
+}
+
+@media (prefers-color-scheme: dark) {
+  body.theme-auto {
+    --primary-color: var(--dark-primary-color);
+    --secondary-color: var(--dark-secondary-color);
+    --text-color: var(--dark-text-color);
+    --text-color-shady: var(--dark-text-color-shady);
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  body.theme-auto {
+    --primary-color: var(--light-primary-color);
+    --secondary-color: var(--light-secondary-color);
+    --text-color: var(--light-text-color);
+    --text-color-shady: var(--light-text-color-shady);
+  }
+}
+
+@media screen and (max-width: 1200px) and (min-width: 901px) {
+  .post-section {
+    grid-template: repeat(1, 1fr) / repeat(3, 1fr);
+  }
+
+  .hide-in-1200 {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 900px) and (min-width: 769px) {
+  .post-section {
+    grid-template: repeat(1, 1fr) / repeat(2, 1fr);
+  }
+
+  .hide-in-900 {
+    display: none;
+  }
+
+  main aside {
+    width: auto;
+    padding-left: 0;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .top-posts {
+    grid-template: repeat(1, 1fr) / repeat(1, 1fr);
+  }
+
+  .top-post-1 {
+    grid-column: span 1;
+  }
+
+  .container {
+    margin-left: 70px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .post-section {
+    grid-template: repeat(1, 1fr) / repeat(2, 1fr);
+  }
+
+  .hide-in-900 {
+    display: none;
+  }
+
+  main aside {
+    width: auto;
+    padding-left: 0;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .desktop-nav {
+    display: none;
+  }
+
+  .top-posts {
+    grid-template: repeat(1, 1fr) / repeat(1, 1fr);
+  }
+
+  .container {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  main aside {
+    display: none;
+  }
+
+  main {
+    width: 100%;
+  }
+
+  .show-in-mobile {
+    display: initial;
+  }
+}
+
+@media screen and (max-width: 477px) {
+  .post-section {
+    grid-template: repeat(1, 1fr) / repeat(1, 1fr);
+  }
 }

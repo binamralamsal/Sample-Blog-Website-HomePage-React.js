@@ -1,24 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import Header from "./components/Header";
+import Sidebar from "./components/Sidebar";
+import { useState } from "react";
+import { createMuiTheme, ThemeProvider } from "@material-ui/core";
 
 function App() {
+  const localMode = localStorage.getItem("mode");
+  const [theme, setTheme] = useState(localMode == "light" ? "light" : "dark");
+
+  const darkTheme = createMuiTheme({
+    palette: {
+      type: theme,
+    },
+  });
+
+  const changeTheme = (theme) => {
+    setTheme(theme);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeProvider theme={darkTheme}>
+      <div className="App">
+        <Header />
+        <main>
+          <Sidebar changeTheme={changeTheme} />
+          <div class="container">
+            <div class="content"></div>
+          </div>
+        </main>
+      </div>
+    </ThemeProvider>
   );
 }
 

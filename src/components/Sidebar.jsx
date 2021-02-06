@@ -21,7 +21,7 @@ const Sidebar = (props) => {
     const mode = event.target.value;
     setMode(mode);
     localStorage.setItem("mode", mode);
-    props.changeTheme(mode == "auto" ? "dark" : mode);
+    props.changeTheme(mode === "auto" ? "dark" : mode);
   };
 
   return (
@@ -30,7 +30,7 @@ const Sidebar = (props) => {
         <p className="title hide-in-900">Menu</p>
         <ul>
           <li className="active">
-            <a href="#">
+            <a href="/#">
               <i></i>
               <HomeIcon className="aside-icon hide-in-1200" />
               <p className="aside-icon-content hide-in-900">Discover</p>
@@ -38,21 +38,21 @@ const Sidebar = (props) => {
           </li>
 
           <li>
-            <a href="#">
+            <a href="/#">
               <WhatshotIcon className="fas fa-fire aside-icon hide-in-1200" />
               <p className="aside-icon-content hide-in-900">Trending</p>
             </a>
           </li>
 
           <li>
-            <a href="#">
+            <a href="/#">
               <InsertEmoticonIcon className="aside-icon hide-in-1200"></InsertEmoticonIcon>
               <p className="aside-icon-content hide-in-900">Memes</p>
             </a>
           </li>
 
           <li>
-            <a href="#">
+            <a href="/#">
               <EmojiObjectsIcon className="aside-icon hide-in-1200"></EmojiObjectsIcon>
               <p className="aside-icon-content hide-in-900">Facts</p>
             </a>
@@ -64,28 +64,28 @@ const Sidebar = (props) => {
 
         <ul>
           <li>
-            <a href="#">
+            <a href="/#">
               <InsertEmoticonIcon className="aside-icon hide-in-1200"></InsertEmoticonIcon>
               <p className="aside-icon-content hide-in-900">Entertainment</p>
             </a>
           </li>
 
           <li>
-            <a href="#">
+            <a href="/#">
               <FlightIcon className="aside-icon hide-in-1200"></FlightIcon>
               <p className="aside-icon-content hide-in-900">Travel</p>
             </a>
           </li>
 
           <li>
-            <a href="#">
+            <a href="/#">
               <ComputerIcon className="aside-icon hide-in-1200"></ComputerIcon>
               <p className="aside-icon-content hide-in-900">Programming</p>
             </a>
           </li>
 
           <li>
-            <a href="#">
+            <a href="/#">
               <PhoneAndroidIcon className="aside-icon hide-in-1200"></PhoneAndroidIcon>
               <p className="aside-icon-content hide-in-900">Mobile & Gadgets</p>
             </a>

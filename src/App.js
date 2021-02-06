@@ -6,7 +6,7 @@ import { createMuiTheme, ThemeProvider } from "@material-ui/core";
 
 function App() {
   const localMode = localStorage.getItem("mode");
-  const [theme, setTheme] = useState(localMode == "light" ? "light" : "dark");
+  const [theme, setTheme] = useState(localMode === "light" ? "light" : "dark");
 
   const darkTheme = createMuiTheme({
     palette: {

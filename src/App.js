@@ -3,14 +3,14 @@ import Header from "./components/Header";
 import Sidebar from "./components/Sidebar";
 import TopPosts from "./components/TopPosts/TopPosts";
 import { useState } from "react";
-import { createMuiTheme, ThemeProvider } from "@material-ui/core";
+import { createTheme, ThemeProvider } from "@material-ui/core";
 import PostBlocks from "./components/PostBlocks/PostBlocks";
 
 function App() {
   const localMode = localStorage.getItem("mode");
   const [theme, setTheme] = useState(localMode === "light" ? "light" : "dark");
 
-  const darkTheme = createMuiTheme({
+  const darkTheme = createTheme({
     palette: {
       type: theme,
     },
